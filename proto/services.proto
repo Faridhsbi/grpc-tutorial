@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package services;
+
+// Service for processing payments
+service PaymentService {
+  rpc ProcessPayment (PaymentRequest) returns (PaymentResponse);
+}
+
+// service for chencking transaction
+service TransactionService {
+  rpc GetTransactionHistory (TransactionRequest) returns (stream TransactionResponse);
+}
+
+// service for chatting with a customer service bot
+service ChatService {
+    rpc Chat(stream ChatMessage) returns (stream ChatMessage);
+}
